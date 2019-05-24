@@ -103,7 +103,7 @@ jQuery( function( $ ) {
 
             createListCity: function(data) {
 
-                var html = '<select name="novaposhta_city" id="novaposhta_city" class="select "  data-placeholder="Select city" >';
+                var html = '<select name="novaposhta_city" id="novaposhta_city" class="select "  data-placeholder="Оберіть населений пункт" >';
                 html += '  <option id ="empty-city" value="" >Оберіть населений пункт</option>';
                 for (var city in data.cities) {
                     html += '  <option value="'+ data.cities[city].city +'" >'+ data.cities[city].city +'</option>';
@@ -228,8 +228,8 @@ jQuery( function( $ ) {
 
                 $("#novaposhta_department_field").remove();
 
-                var html = '<p class="form-row form-row my-field-class form-row-wide" id="novaposhta_department_field" style="display: none"><label for="novaposhta_department" class="">Список отделений Новой Почты</label>';
-                html += '<select name="novaposhta_department" id="novaposhta_department" class="select "  data-placeholder="Select department" >';
+                var html = '<p class="form-row form-row my-field-class form-row-wide" id="novaposhta_department_field" style="display: none"><label for="novaposhta_department" class="">Список відділень Нової Пошти</label>';
+                html += '<select name="novaposhta_department" id="novaposhta_department" class="select "  data-placeholder="Оберіть відділення" >';
                 html += '  <option value="" >Відділення Нової Пошти</option>';
                 for (var city in data.houses) {
                     html += '  <option value="'+ data.houses[city].warehouse +'" >'+ data.houses[city].warehouse +'</option>';
@@ -270,8 +270,10 @@ jQuery( function( $ ) {
                         },
                         data: req_data,
                         timeout: 30000,
+
+                        // TODO Remove Alert
                         success: function (data) {
-                               alert(data.department);
+                               // alert(data.department);
                         }
                     });
                 });
