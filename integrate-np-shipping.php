@@ -530,6 +530,22 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
     }
 
 
+    // Adding WC actions to save NP Data
+    add_action('woocommerce_thankyou', 'integrate_np_save_np_meta', 10, 1);
+
+    /**
+     * @param $order Order ID
+     */
+    function integrate_np_save_np_meta($orderId)
+    {
+        if (isset($_SESSION['department']) && isset($_SESSION['city'])) {
+            add_post_meta($orderId, '_integrate_np_department', $_SESSION['city'] . ': ' . $_SESSION['department'], false);
+        }
+
+        // Display Saved Data on Checkout page
+        echo '<p><strong>' . __('Department of Nova Poshta', 'integrate_np') . ':</strong> ' . get_post_meta($orderId, '_integrate_np_department', true) . '</p>';
+    }
+
     add_action('woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1);
 
     /*
