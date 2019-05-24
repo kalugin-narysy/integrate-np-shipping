@@ -539,7 +539,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
     function integrate_np_save_np_meta($orderId)
     {
         if (isset($_SESSION['department']) && isset($_SESSION['city'])) {
-            add_post_meta($orderId, '_integrate_np_department', $_SESSION['city'] . ': ' . $_SESSION['department'], false);
+            add_post_meta($orderId, '_integrate_np_department', $_SESSION['department'] . ' (' . $_SESSION['city'] . ')', false);
         }
 
         // Display Saved Data on Checkout page
@@ -556,17 +556,17 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
     function my_custom_checkout_field_display_admin_order_meta($order)
     {
 
-        if (isset($_SESSION['department'])) {
-            add_post_meta($order->id, '_integrate_np_department', $_SESSION['department'], false);
-        }
+//        if (isset($_SESSION['department'])) {
+//            add_post_meta($order->id, '_integrate_np_department', $_SESSION['department'], false);
+//        }
 
-        echo '<p><strong>' . __('Department of Nova Poshta', 'integrate_np') . ':</strong>' . get_post_meta($order->id, '_integrate_np_department', true) . '</p>';
+        echo '<p><strong>' . __('Department of Nova Poshta', 'integrate_np') . ':</strong> <br/>' . get_post_meta($order->id, '_integrate_np_department', true) . '</p>';
 
-        if (isset($_SESSION['department'])) {
-            $_SESSION['department'] = null;
-        }
-
-        $_SESSION['city'] = null;
+//        if (isset($_SESSION['department'])) {
+//            $_SESSION['department'] = null;
+//        }
+//
+//        $_SESSION['city'] = null;
     }
 
     /*
