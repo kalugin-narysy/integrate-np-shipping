@@ -8,12 +8,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-03-13 18:47+0200\n"
+"PO-Revision-Date: 2019-05-25 10:33+0300\n"
 "Language-Team: \n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.2.3\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
+"Language: uk\n"
 
 #: novaposhta-shipping.php:49
 msgid "Novaposhta Shipping"
@@ -29,7 +29,7 @@ msgstr "Увімкнути"
 
 #: novaposhta-shipping.php:89
 msgid "Enable this shipping."
-msgstr "Увімкнути цей метод доставки"
+msgstr "Увімкнути цей метод доставки."
 
 #: novaposhta-shipping.php:94
 msgid "Title"
@@ -41,7 +41,7 @@ msgstr "Заголовок для відображення на сайті"
 
 #: novaposhta-shipping.php:101
 msgid "API key"
-msgstr "ключ API"
+msgstr "Ключ API"
 
 #: novaposhta-shipping.php:103
 msgid "API key for Novaposhta API"
